@@ -3,6 +3,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN find . -name "*.java" -exec javac {} \;
+RUN find . -name "*.java" > sources.txt && \
+    javac -d . @sources.txt
 
-CMD ["java", "Main"]
+CMD ["java", "-cp", ".", "br.com.dio.Main"]
