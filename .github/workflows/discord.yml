@@ -3,6 +3,8 @@ name: Discord
 on:
   - push
 
+permissions:
+  contents: read
 jobs:
   discord:
     runs-on: ubuntu-latest
